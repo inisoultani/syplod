@@ -19,7 +19,8 @@ package com.android.picasaphotouploader;
 import com.PicasaPhotoUpload.PicasaPhotoUploadActivity;
 
 import android.content.ContentUris;
-import android.content.CursorLoader;
+//import android.content.CursorLoader;
+import android.support.v4.content.CursorLoader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.preference.PreferenceManager;
