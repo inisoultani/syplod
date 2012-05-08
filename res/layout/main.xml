@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- main application layout -->
+<RelativeLayout
+  android:id="@+id/layoutMain"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="61dp"
+      android:orientation="vertical" >
+
+      <ImageView
+          android:id="@+id/imageLogo"
+          android:layout_width="match_parent"
+          android:layout_height="68dp"
+          android:src="@drawable/ic_launcher"
+          android:tag="Test" />
+
+      <TextView
+          android:id="@+id/labelInfo"
+          android:layout_width="330px"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="sy.nikahankita.info\n\nAn application to automatically upload photos taken by the phone&apos;s camera to Picasa without any user interaction.\n\nUse the menu button to control this application.\n\nModified only as an app that upload image to my picasa wedding gallery\n\nAuthor: jphooiveld@gmail.com Modified by soulthani@gmail.com\n\nBuilt for : ICS 4.0.3\n\nVersion: 1.1"
+          android:textSize="14sp" />
+  </LinearLayout>
+  
+</RelativeLayout>

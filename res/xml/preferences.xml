@@ -1,0 +1,51 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <ListPreference
+    android:key="connection"
+    android:title="Device connections"
+    android:dialogTitle="Select device connection"
+    android:defaultValue="both"
+    android:entries="@array/connection_entries"
+    android:entryValues="@array/connection_values"
+  />
+  <EditTextPreference
+    android:key="email"
+    android:title="Google username"
+    android:dialogTitle="Enter your google username"
+    android:singleLine="true"
+    android:defaultValue="soulthani@gmail.com"
+  />
+  <EditTextPreference
+    android:key="password"
+    android:title="Google password"
+    android:dialogTitle="Enter your google password"
+    android:singleLine="true"
+    android:password="true"
+    android:defaultValue="soulthani1"
+  />
+  <!-- class that extends listPreference to choose Picasa album -->
+  <com.android.picasaphotouploader.AlbumPreference
+    android:key="album"
+    android:title="Picasa album"
+    android:dialogTitle="Select Picasa album"
+    android:defaultValue="digiGreen"
+    android:entries="@array/album_entries"
+    android:entryValues="@array/album_values"
+  />
+  <ListPreference
+    android:key="retries"
+    android:title="Upload retries"
+    android:dialogTitle="Select number of times to retry failed uploads"
+    android:defaultValue="_0"
+    android:entries="@array/retries_entries"
+    android:entryValues="@array/retries_values"
+  />
+  <!-- class that extends listPreference to enable of disable application notification -->
+  <com.android.picasaphotouploader.ApplicationNotificationPreference
+    android:key="notification"
+    android:title="Notification"
+    android:dialogTitle="Select application notification"
+    android:defaultValue="disabled"
+    android:entries="@array/notification_entries"
+    android:entryValues="@array/notification_values"
+  />
+</PreferenceScreen>
