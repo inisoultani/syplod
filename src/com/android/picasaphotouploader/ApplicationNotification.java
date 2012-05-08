@@ -16,8 +16,10 @@
  */
 package com.android.picasaphotouploader;
 
-import com.PicasaPhotoUpload.PicasaPhotoUploadActivity;
-import com.PicasaPhotoUpload.R;
+
+
+import com.syplod.R;
+import com.syplod.SyplodActivity;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -101,7 +103,7 @@ public class ApplicationNotification
       // create notificaion, flags and intent
       Notification notification    = new Notification(R.drawable.ic_launcher, null, System.currentTimeMillis());
       notification.flags          |= Notification.FLAG_ONGOING_EVENT;
-      Intent notificationIntent    = new Intent(context, PicasaPhotoUploadActivity.class);
+      Intent notificationIntent    = new Intent(context, SyplodActivity.class);
       notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
       PendingIntent contentIntent  = PendingIntent.getActivity(context, 0, notificationIntent, 0);
 

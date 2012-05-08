@@ -24,7 +24,7 @@ import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
 
-import com.PicasaPhotoUpload.PicasaPhotoUploadActivity;
+import com.syplod.SyplodActivity;
 
 /**
  * Class to observe changes to images table
@@ -36,7 +36,7 @@ public class ImageTableObserver extends ContentObserver
 	/**
 	 * Main application
 	 */
-	private PicasaPhotoUploadActivity application;
+	private SyplodActivity application;
 
 	/**
 	 *  Queue that handles image uploads
@@ -91,7 +91,7 @@ public class ImageTableObserver extends ContentObserver
 	 * @param picasaPhotoUploadActivity Main application
 	 * @param queue Queue that handles image uploads
 	 */
-	public ImageTableObserver(Handler handler, PicasaPhotoUploadActivity picasaPhotoUploadActivity, ExecutorService queue)
+	public ImageTableObserver(Handler handler, SyplodActivity picasaPhotoUploadActivity, ExecutorService queue)
 	{
 		super(handler);
 

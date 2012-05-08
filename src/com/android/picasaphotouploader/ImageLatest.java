@@ -16,7 +16,7 @@
  */
 package com.android.picasaphotouploader;
 
-import com.PicasaPhotoUpload.PicasaPhotoUploadActivity;
+import com.syplod.SyplodActivity;
 
 import android.content.ContentUris;
 //import android.content.CursorLoader;
@@ -36,7 +36,7 @@ public class ImageLatest
   /**
    * Main application
    */
-  private PicasaPhotoUploadActivity application;
+  private SyplodActivity application;
 
   /**
    * Latest image id in database
@@ -47,7 +47,7 @@ public class ImageLatest
    *
    * @param application Main application
    */
-  public ImageLatest(PicasaPhotoUploadActivity application)
+  public ImageLatest(SyplodActivity application)
   {
     this.application = application;
   }

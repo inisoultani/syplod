@@ -16,7 +16,7 @@
  */
 package com.android.picasaphotouploader;
 
-import com.PicasaPhotoUpload.R;
+import com.syplod.R;
 
 import android.app.Notification;
 import android.app.NotificationManager;
