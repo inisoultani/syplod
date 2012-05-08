@@ -19,6 +19,7 @@ package com.android.picasaphotouploader;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import java.io.File;
 import java.util.concurrent.ExecutorService;
@@ -130,6 +131,7 @@ public class ImageUploader implements Runnable
       // notify user that file has been uploaded
       notification.finished();
     } catch (Exception e) {
+      Log.e("ImageUploader - Error(" + item.imageName +")", e.getMessage());
       // file upload failed so abort post and close connection
       post.abort();
       client.getConnectionManager().shutdown();
@@ -141,10 +143,12 @@ public class ImageUploader implements Runnable
       // check if we can connect to internet and if we still have any tries left
       // to try upload again
       if (CheckInternet.getInstance().canConnect(context, prefs) && retries < maxRetries) {
+    	Log.i("ImageUploader - Info", "retries attempt " + retries + " for item : " + item.imageName);
         // remove notification for failed upload and queue item again
         notification.remove();
         queue.execute(new ImageUploader(context, queue, item, retries++));
       } else {
+    	  Log.e("ImageUploader - Failed(" + item.imageName +")", e.getMessage());
         // upload failed, so let's notify user
         notification.failed();
       }
