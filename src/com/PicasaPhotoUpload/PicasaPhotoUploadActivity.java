@@ -66,6 +66,11 @@ public class PicasaPhotoUploadActivity extends Activity {
 	   * Hold all notification ID's
 	   */
 	  private List<Integer> liID;
+	  
+	  /**
+	   * flag that listener already created
+	   */
+	  private static boolean isAlreadyCreated = false;
 	
 	  /**
 	   * Main appplication constructor
@@ -95,9 +100,12 @@ public class PicasaPhotoUploadActivity extends Activity {
         // store highest image id from database in application
         setMaxIdFromDatabase();
 
-        // register camera observer
-        camera = new ImageTableObserver(new Handler(), this, queue);
-        getContentResolver().registerContentObserver(Media.EXTERNAL_CONTENT_URI, true, camera);
+       if (!PicasaPhotoUploadActivity.isAlreadyCreated){
+       	    // register camera observer
+            camera = new ImageTableObserver(new Handler(), this, queue);
+            getContentResolver().registerContentObserver(Media.EXTERNAL_CONTENT_URI, true, camera);
+            PicasaPhotoUploadActivity.isAlreadyCreated = true;
+        }
     }
     
     /**
